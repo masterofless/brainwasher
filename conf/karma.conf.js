@@ -1,37 +1,36 @@
 module.exports = function(config){
     config.set({
-    basePath : '../src/',
+        basePath : '../src/',
 
-    files : [
-      'lib/angular/angular.js',
-      'lib/angular/angular-*.js',
-      'app/js/**/*.js',
-      'test/lib/angular/angular-mocks.js',
-      'test/unit/**/*.js'
-    ],
+        files : [
+            //'lib/angular/angular.js',
+            //'lib/angular/angular-*.js',
+            //'app/js/*.js',
+            //'test/lib/angular/angular-mocks.js',
+            'test/unit/*Spec.js'
+        ],
 
-    exclude : [
-      'app/lib/angular/angular-loader.js',
-      'app/lib/angular/*.min.js',
-      'app/lib/angular/angular-scenario.js'
-    ],
-
-    autoWatch : true,
-
-    frameworks: ['jasmine'],
-
-    browsers : ['Firefox'],
-
-    plugins : [
+        exclude : [
+            'app/lib/angular/angular-loader.js',
+            'app/lib/angular/*.min.js',
+            'app/lib/angular/angular-scenario.js'
+        ],
+        autoWatch : true,
+        frameworks: ['jasmine'],
+        browsers : ['Firefox'],
+        plugins : [
             'karma-junit-reporter',
-            'karma-chrome-launcher',
+            'karma-spec-reporter',
+            'karma-html-reporter',
             'karma-firefox-launcher',
             'karma-jasmine'
-            ],
-
-    junitReporter : {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
-
-})}
+        ],
+        reporters: ['progress', 'junit', 'spec', 'html', 'dots'],
+        junitReporter : {
+            outputFile: '../target/karma_junit.xml',
+            suite: 'unit'
+        },
+        htmlReporter : {
+            outputDir: 'target/karma_html'
+        }
+    })};

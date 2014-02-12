@@ -37,5 +37,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['karma:unit']);
+    grunt.registerTask('default', 'Runs everything a Developer should', ['jslint:all', 'karma:unit']);
 };

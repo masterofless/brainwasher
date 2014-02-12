@@ -14,6 +14,7 @@
     "karma-junit-reporter": "~0.2.1",
     "karma-jasmine": "~0.1.5",
     "karma-spec-reporter": "0.0.9",
-    "karma-html-reporter": "~0.1.1"
+    "karma-html-reporter": "~0.1.1",
+    "grunt-jslint": "~1.1.4"
   }
 }

@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+    'use strict';
+    grunt.loadNpmTasks('grunt-jslint');
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
@@ -20,10 +22,20 @@ module.exports = function(grunt) {
             continuous: {
                 singleRun: false
             }
+        },
+        jslint: {
+            all: {
+                src: ['src/app/**/*.js'],
+                options: {
+                    log: 'target/jslint.log',
+                    jslintXml: 'target/jslint.xml',
+                    checkstyle: 'target/checkstyle.xml'
+                }
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['karma']);
+    grunt.registerTask('default', ['karma:unit']);
 };

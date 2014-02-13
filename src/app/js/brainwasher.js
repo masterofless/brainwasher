@@ -4,6 +4,10 @@
     'use strict';
     var brainwasher = angular.module('brainwasher', []);
     brainwasher.controller('BrainController', function ($scope) {
+        $scope.title = 'Teams Are Cool';
+        $scope.current = 0;
+        $scope.slides = new Array({title: 'First Dummy Slide'}, {title: 'Second Dummy Slide'}, {title: '3rd Slide'});
+
         if ($scope.current == null || $scope.current < 0) {
             $scope.current = 0;
         }

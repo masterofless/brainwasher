@@ -18,13 +18,9 @@ describe('Brainwasher', function(){
      
     describe('BrainController', function(){
         beforeEach(module('brainwasher'));
-        var ttl = "Andy's Perceived Learnings About Teams";
+        var ttl = "Teams Are Cool";
         it('should have a brain controller', inject(function($controller) {
-            var scope = {
-                title: ttl,
-                current: 0,
-                slides: new Array({title: 'First Dummy Slide'}, {title: 'Second Dummy Slide'}, {title: '3rd Slide'})
-            }
+            var scope = {};
             expect(typeof scope).toBe('object');
             var ctrl = $controller('BrainController', {$scope: scope});
             expect(typeof ctrl).toBe('object');

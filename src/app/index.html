@@ -6,22 +6,24 @@
         <script src="js/brainwasher.js"></script>
     </head>
     <body ng-controller="BrainController">
-        <h1>Welcome to the Brainwasher!</h1>
-        <h1>{{title}}</h1>
-        <div class="controls">
-            <button ng-click="prevSlide()" ng-init"current = 0">
-                Previous
-            </button>
-            <button ng-click="nextSlide()" ng-init"current = 0">
-                Next
-            </button>
-            Current: {{current}}
-        </div>
         <div class="container">
-            <ul>
-                <li ng-repeat="slide in slides">{{slide.title}}
-                </li>
-            </ul>
+            <h1>Welcome to the Brainwasher!</h1>
+            <h1>{{title}}</h1>
+            <div class="controls">
+                <button ng-click="startSlides()" ng-init"current = 0">
+                    Previous
+                </button>
+                <button ng-click="prevSlide()">
+                    Previous
+                </button>
+                <button ng-click="nextSlide()">
+                    Next
+                </button>
+                Current: {{current}}
+            </div>
+            <div class="slide">
+                <h2>{{slideTitle}}</h2>
+            </div>
         </div>
     </body>
 </html>

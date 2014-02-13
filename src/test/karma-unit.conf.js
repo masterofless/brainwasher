@@ -22,7 +22,7 @@ module.exports = function(config) {
 //        frameworks: ["jasmine"],
 //        files: [
 //            // this file must be loaded first in order to have the global dojoConfig object set up
-//            'app/js/afcPresents.js',
+//            'app/js/brainwasher.js',
 //            {pattern: 'test/unit/*.js'}
 //        ],
 //        exclude: [], // list of files to exclude

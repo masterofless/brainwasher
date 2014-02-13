@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="brainwasher">
+    <head>
+        <title>Brainwasher</title>
+        <script src="lib/angular/angular.js"></script>
+    </head>
+    <body ng-controller="BrainController">
+        <h1>{{preso.title}}</h1>
+        <div class="container">
+            <ul>
+                <li ng-repeat="slide in slides">{{slide.title}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

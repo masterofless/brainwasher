@@ -1,9 +1,9 @@
 {
-  "name": "afc-presents",
+  "name": "brainwasher",
   "description": "AFC Presents Stuff",
   "repository": {
     "type": "git",
-    "url": "http://homepage:/~afc25/afc-presents"
+    "url": "http://homepage:/~afc25/brainwasher"
   },
   "version": "0.1.0",
   "devDependencies": {

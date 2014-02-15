@@ -4,13 +4,18 @@
         <title>Brainwasher</title>
         <script src="../lib/angular/angular.js"></script>
         <script src="js/brainwasher.js"></script>
+        <style>
+            .slide {
+                border: 2px solid red;
+            }
+        </style>
     </head>
     <body ng-controller="BrainController">
-        <div class="container">
+        <div class="container" ng-init="current = 0">
             <h1>Welcome to the Brainwasher!</h1>
             <h1>{{title}}</h1>
             <div class="controls">
-                <button ng-click="startSlides()" ng-init"current = 0">
+                <button ng-click="startSlides()">
                     Start
                 </button>
                 <button ng-click="prevSlide()">
@@ -21,7 +26,7 @@
                 </button>
                 Current: {{current}}
             </div>
-            <div class="slide">
+            <div class="slide" ng-model="slideTitle">
                 <h2>{{slideTitle}}</h2>
             </div>
         </div>

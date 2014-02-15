@@ -24,7 +24,7 @@ describe('Brainwasher', function(){
             expect(typeof scope).toBe('object');
             var ctrl = $controller('BrainController', {$scope: scope});
             expect(typeof ctrl).toBe('object');
-            expect(scope.slideTitle()).toBe(ttl);
+            expect(scope.slideTitle).toBe(ttl);
             expect(scope.slides().length).toBe(3);
             expect(scope.current).toBe(0);
             expect(scope.atBeginning()).toBe(true);

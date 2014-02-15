@@ -4,45 +4,43 @@
     'use strict';
     var brainwasher = angular.module('brainwasher', []);
     brainwasher.controller('BrainController', function ($scope) {
-        $scope.title = 'Teams Are Cool';
-        $scope.current = 0;
-        $scope.slides = new Array({title: 'First Dummy Slide'}, {title: 'Second Dummy Slide'}, {title: '3rd Slide'});
-        $scope.slideTitle = $scope.slides[0].title;
+        $scope.presentation = {title: "This is the presentation title",
+            slides: new Array({title: 'First Dummy Slide'}, {title: 'Second Dummy Slide'}, {title: '3rd Slide'})};
 
-        if ($scope.current == null || $scope.current < 0) {
-            $scope.current = 0;
+        $scope.current = 0;
+
+        $scope.slides = function() {
+            return $scope.presentation.slides;
         }
         /* */
-        $scope.startSlides = function() {
-            $scope.current = 0;
-            return $scope.changeToCurrent();
+        $scope.slideTitle = function() {
+            return $scope.presentation.slides[$scope.current].title;
         };
-        /* */
-        $scope.changeToCurrent = function() {
-            $scope.slideTitle = $scope.slides[$scope.current].title;
-            return $scope.current;
-        }
+
         /* */
         $scope.nextSlide = function() {
             if (! $scope.atEnd()) {
                 $scope.current += 1;
             }
-            return $scope.changeToCurrent();
+            return $scope.current;
         };
+
         /* */
         $scope.prevSlide = function() {
             if (! $scope.atBeginning()) {
                 $scope.current -= 1;
             }
-            return $scope.changeToCurrent();
+            return $scope.current;
         };
+
         /* */
         $scope.atBeginning = function() {
-            return $scope.current == 0;
+            return $scope.current <= 0;
         };
+
         /* */
         $scope.atEnd = function() {
-            return $scope.current >= $scope.slides.length - 1;
+            return $scope.current >= $scope.presentation.slides.length - 1;
         };
     });
 }());

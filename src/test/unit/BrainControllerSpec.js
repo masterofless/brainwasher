@@ -18,20 +18,21 @@ describe('Brainwasher', function(){
      
     describe('BrainController', function(){
         beforeEach(module('brainwasher'));
-        var ttl = "Teams Are Cool";
+        var ttl = 'First Dummy Slide';
         it('should have a brain controller', inject(function($controller) {
             var scope = {};
             expect(typeof scope).toBe('object');
             var ctrl = $controller('BrainController', {$scope: scope});
             expect(typeof ctrl).toBe('object');
-            expect(scope.title).toBe(ttl);
-            expect(scope.slides.length).toBe(3);
+            expect(scope.slideTitle()).toBe(ttl);
+            expect(scope.slides().length).toBe(3);
             expect(scope.current).toBe(0);
             expect(scope.atBeginning()).toBe(true);
             expect(scope.atEnd()).toBe(false);
             expect(scope.nextSlide()).toBe(1);
             expect(scope.current).toBe(1);
             expect(scope.prevSlide()).toBe(0);
+            expect(scope.current).toBe(0);
             scope.current = 2;
             expect(scope.atEnd()).toBe(true);
             expect(scope.nextSlide()).toBe(2);
